@@ -1,0 +1,39 @@
+{
+    "name": "shieldfy/shieldfy-yii-extension",
+    "type": "yii2-extension",
+    "description": "This is the official PHP SDK for Shieldfy (shieldfy.io)",
+    "keywords": [
+        "shieldfy",
+        "shieldfy-php-client"
+    ],
+    "homepage": "https://github.com/shieldfy/shieldfy-php-client",
+    "authors": [
+        {
+            "name": "Shieldfy Inc.",
+            "email": "team@shieldfy.io",
+            "homepage": "https://shieldfy.io"
+        }
+    ],
+    "require": {
+        "php" : "~5.6|~7.0",
+        "ext-curl": "*",
+        "shieldfy/shieldfy-php-client":"dev-develop"
+    },
+    "autoload": {
+        "psr-4": {
+            "Shieldfy\\Extensions\\Yii\\": "src"
+        }
+    },
+    "repositories": [
+        {
+          "type": "vcs",
+          "url": "../../shieldfy-php-client"
+        }
+    ],
+    "extra": {
+        "bootstrap": "Shieldfy\\Extensions\\Yii\\BootstrapLoader"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
