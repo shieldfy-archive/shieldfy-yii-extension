@@ -4,9 +4,10 @@
     "description": "This is the official PHP SDK for Shieldfy (shieldfy.io)",
     "keywords": [
         "shieldfy",
-        "shieldfy-php-client"
+        "shieldfy-php-client",
+        "shieldfy-yii-extension"
     ],
-    "homepage": "https://github.com/shieldfy/shieldfy-php-client",
+    "homepage": "https://github.com/shieldfy/shieldfy-yii-extension",
     "authors": [
         {
             "name": "Shieldfy Inc.",
@@ -24,12 +25,6 @@
             "Shieldfy\\Extensions\\Yii\\": "src"
         }
     },
-    "repositories": [
-        {
-          "type": "vcs",
-          "url": "../../shieldfy-php-client"
-        }
-    ],
     "extra": {
         "bootstrap": "Shieldfy\\Extensions\\Yii\\BootstrapLoader"
     },
