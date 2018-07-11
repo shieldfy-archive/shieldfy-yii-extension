@@ -13,10 +13,13 @@ class BootstrapLoader implements BootstrapInterface
     public function bootstrap($app)
     {
         $app->on(Application::EVENT_BEFORE_REQUEST, function () use($app) {
+            if (php_sapi_name() === "cli") {
+                return;
+            }
             $shieldfy = \Shieldfy\Guard::init([
                 'endpoint'      => 'https://api.shieldfy.com/v1',
-                'app_key'       => '',
-                'app_secret'    => ''
+                'app_key'       => \Yii::$app->params['Shieldfy']['appKey'],
+                'app_secret'    => \Yii::$app->params['Shieldfy']['appSecret']
             ]);
 
             \Yii::$container->set('shieldfy',$shieldfy);
