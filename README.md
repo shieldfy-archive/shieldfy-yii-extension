@@ -1,4 +1,4 @@
-# shieldfy yii extension
+# Shieldfy Yii Extension
 ## Require shieldfy Yii extension
 From your console navigate to your application folder and enter the command below:
 ```
@@ -7,7 +7,7 @@ composer require shieldfy/shieldfy-yii-extension
 for more information about composer click [here](https://getcomposer.org/doc/01-basic-usage.md)
 
 ## Add Shieldfy DB listener
-Add shieldfy attachPDO to this file config/db.php:
+Add shieldfy attachPDO to this file `config/db.php`
 ```
 return [
     .....
@@ -19,7 +19,7 @@ return [
 ```
 
 ## Add Shieldfy Key & Secret
-Add shieldfy key, secret to this file config/params.php:
+Add shieldfy key, secret to this file `config/params.php`
 ```
 return [
     .....             
