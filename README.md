@@ -6,7 +6,8 @@ composer require shieldfy/shieldfy-yii-extension
 ```
 for more information about composer click [here](https://getcomposer.org/doc/01-basic-usage.md)
 
-## Add Shieldfy DB listener
+## Yii Basic
+### Add Shieldfy DB listener
 Add shieldfy attachPDO to this file `config/db.php`
 ```
 return [
@@ -18,14 +19,46 @@ return [
 ]
 ```
 
-## Add Shieldfy Key & Secret
+### Add Shieldfy Key & Secret
 Add shieldfy key, secret to this file `config/params.php`
 ```
 return [
     .....             
     'Shieldfy' => [
-        'appKey' => 'jsd155068s',
-        'appSecret' => '137f2998c8dfb157b5c97ed75bbeae52d284ad3a46b7c9cac332460710fb5618',
+        'appKey' => '<APP_KEY>',
+        'appSecret' => '<APP_SECRET>',
+    ]
+]
+
+```
+
+## Yii Advanced
+### Add Shieldfy DB listener
+Add shieldfy attachPDO to this file `common/config/main-local.php`
+```
+return [
+    'components' => [
+        'db' => [
+            ...
+            'on afterOpen' => function($event) {
+                (\Yii::$container->get('shieldfy'))?\Yii::$container->get('shieldfy')->attachPDO($event->sender->pdo):null;
+        	},
+        ],
+        'mailer' => [
+        .....
+    ],
+];
+
+```
+
+### Add Shieldfy Key & Secret
+Add shieldfy key, secret to this file `common/config/params.php`
+```
+return [
+    .....             
+    'Shieldfy' => [
+        'appKey' => '<APP_KEY>',
+        'appSecret' => '<APP_SECRET>',
     ]
 ]
 
