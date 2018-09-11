@@ -10,8 +10,8 @@ use Shieldfy\Guard;
  */
 class BootstrapLoader implements BootstrapInterface
 {
-    public $APP_KEY;
-    public $APP_SECRET;
+    public $appKey;
+    public $appSecret;
 
     public function bootstrap($app)
     {
@@ -21,8 +21,8 @@ class BootstrapLoader implements BootstrapInterface
             }
             $shieldfy = \Shieldfy\Guard::init([
                 'endpoint'      => 'https://api.shieldfy.com/v1',
-                'app_key'       => $this->APP_KEY,
-                'app_secret'    => $this->APP_SECRET
+                'app_key'       => $this->appKey,
+                'app_secret'    => $this->appSecret
             ]);
 
             \Yii::$container->set('shieldfy',$shieldfy);
