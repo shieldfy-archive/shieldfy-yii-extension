@@ -1,4 +1,4 @@
-# Shieldfy Yii Extension
+# Shieldfy Yii2 Extension
 ## Require shieldfy Yii extension
 From your console navigate to your application folder and enter the command below:
 ```
@@ -6,10 +6,23 @@ composer require shieldfy/shieldfy-yii-extension
 ```
 for more information about composer click [here](https://getcomposer.org/doc/01-basic-usage.md)
 
-## Yii Basic
-### Add Shieldfy DB listener
-Add shieldfy attachPDO to this file `config/db.php`
+## Add Shieldfy Component
+```php
+'bootstrap' => ['shieldfy'],
+'components' => [
+    ...
+    'shieldfy' => [
+          'class' => 'Shieldfy\Extensions\Yii\BootstrapLoader',
+          'appKey' => '<APP_KEY>',
+          'appSecret' => '<APP_SECRET>',
+    ],
+    ...
+]
 ```
+
+## Add Shieldfy DB listener
+### If you use Yii2 Basic. add shieldfy attachPDO to this file `config/db.php`
+```php
 return [
     .....
 
@@ -18,24 +31,8 @@ return [
     }
 ]
 ```
-
-### Add Shieldfy Key & Secret
-Add shieldfy key, secret to this file `config/params.php`
-```
-return [
-    .....             
-    'Shieldfy' => [
-        'appKey' => '<APP_KEY>',
-        'appSecret' => '<APP_SECRET>',
-    ]
-]
-
-```
-
-## Yii Advanced
-### Add Shieldfy DB listener
-Add shieldfy attachPDO to this file `common/config/main-local.php`
-```
+### If you use Yii2 Basic. add shieldfy attachPDO to this file `common/config/main-local.php`
+```php
 return [
     'components' => [
         'db' => [
@@ -48,18 +45,4 @@ return [
         .....
     ],
 ];
-
-```
-
-### Add Shieldfy Key & Secret
-Add shieldfy key, secret to this file `common/config/params.php`
-```
-return [
-    .....             
-    'Shieldfy' => [
-        'appKey' => '<APP_KEY>',
-        'appSecret' => '<APP_SECRET>',
-    ]
-]
-
 ```

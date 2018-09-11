@@ -25,9 +25,6 @@
             "Shieldfy\\Extensions\\Yii\\": "src"
         }
     },
-    "extra": {
-        "bootstrap": "Shieldfy\\Extensions\\Yii\\BootstrapLoader"
-    },
     "config": {
         "sort-packages": true
     }

@@ -10,20 +10,19 @@ use Shieldfy\Guard;
  */
 class BootstrapLoader implements BootstrapInterface
 {
+    public $appKey;
+    public $appSecret;
+
     public function bootstrap($app)
     {
         $app->on(Application::EVENT_BEFORE_REQUEST, function () use($app) {
             if (php_sapi_name() === "cli") {
                 return;
             }
-            // get Shieldfy Params
-            $params = \Yii::$app->params;
-            $paramsShieldfyExists = array_key_exists('Shieldfy', $params);
-            // init Shieldfy Guard
             $shieldfy = \Shieldfy\Guard::init([
                 'endpoint'      => 'https://api.shieldfy.com/v1',
-                'app_key'       => $paramsShieldfyExists ? $params['Shieldfy']['appKey'] : '',
-                'app_secret'    => $paramsShieldfyExists ? $params['Shieldfy']['appSecret'] : ''
+                'app_key'       => $this->appKey,
+                'app_secret'    => $this->appSecret
             ]);
 
             \Yii::$container->set('shieldfy',$shieldfy);
