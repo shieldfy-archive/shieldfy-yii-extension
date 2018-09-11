@@ -21,7 +21,7 @@ for more information about composer click [here](https://getcomposer.org/doc/01-
 ```
 
 ## Add Shieldfy DB listener
-### If you use Yii2 Basic. add shieldfy attachPDO to this file `config/db.php`
+If you use Yii2 Basic. add shieldfy attachPDO to this file `config/db.php`
 ```php
 return [
     .....
@@ -31,7 +31,7 @@ return [
     }
 ]
 ```
-### If you use Yii2 Basic. add shieldfy attachPDO to this file `common/config/main-local.php`
+If you use Yii2 Advanced. add shieldfy attachPDO to this file `common/config/main-local.php`
 ```php
 return [
     'components' => [
